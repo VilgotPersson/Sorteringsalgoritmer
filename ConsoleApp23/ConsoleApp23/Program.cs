@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -9,12 +9,12 @@ namespace ConsoleApp23
 {
     class Program
     {
-        static void Insertionsort(int[] minlista)
+        static void Insertionsort(List<int> minlista)
         {
             int i, n;
-            int length = minlista.Length;
+            int length = minlista.Count;
             if (length < 2) return;
-            int temp = 0;
+            int temp;
             for (n = 1; n < length; n++)
             {
                 temp = minlista[n];
@@ -27,7 +27,7 @@ namespace ConsoleApp23
                 minlista[i + 1] = temp;
             }
         }
-        /*static void Bubbelsort(List<int> minLista)
+        static void Bubbelsort(List<int> minLista)
         {
             for(int i = 0; i < minLista.Count; i++)
             {
@@ -43,14 +43,14 @@ namespace ConsoleApp23
             }
                 
         }
-        */
+        
         static void Main(string[] args)
         {
 
 
             var tallista = new List<int>();
             Random slump = new Random();
-            for(int i = 0; i < 10000; i++)
+            for(int i = 0; i < 100000; i++)
             {
                 tallista.Add(slump.Next(100000));
             }
@@ -62,10 +62,5 @@ namespace ConsoleApp23
             Console.WriteLine("Tiden: " + stopWatch.Elapsed);
             }
 
-        private static void Insertionsort(List<int> tallista)
-        {
-            throw new NotImplementedException();
         }
     }
-    }
-
